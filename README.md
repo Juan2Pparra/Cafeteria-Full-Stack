@@ -1,4 +1,4 @@
-# ☕ Cafeteria Full Stack (Proyecto en Desarrollo)
+# Cafeteria Full Stack (Proyecto en Desarrollo)
 
 Aplicación full stack de e-commerce tipo cafetería desarrollada con **Node.js, Express, MongoDB y jQuery**.
 
