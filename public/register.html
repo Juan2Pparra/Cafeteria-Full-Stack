@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Registro | Cafetería</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="toasts" id="toasts"></div>
+
+    <div class="page">
+      <div class="contenedor">
+        <div class="panel" style="max-width: 520px; margin: 0 auto">
+          <div style="display: flex; gap: 12px; align-items: center">
+            <div class="logo">
+              <div class="mark"><i class="fa-solid fa-user-plus"></i></div>
+              <div class="name"><b>Crear cuenta</b><small>Registro</small></div>
+            </div>
+          </div>
+
+          <div style="height: 18px"></div>
+
+          <form id="registerForm" class="form">
+            <div class="input">
+              <i class="fa-solid fa-user"></i>
+              <input type="text" id="nombre" placeholder="Nombre" required />
+            </div>
+            <div class="input">
+              <i class="fa-solid fa-envelope"></i>
+              <input type="email" id="email" placeholder="Correo" required />
+            </div>
+            <div class="input">
+              <i class="fa-solid fa-lock"></i>
+              <input
+                type="password"
+                id="password"
+                placeholder="Contraseña"
+                required
+              />
+            </div>
+
+            <button class="btn btn-primary" type="submit">
+              <i class="fa-solid fa-user-check"></i> Registrarme
+            </button>
+
+            <p class="helper" style="text-align: center">
+              ¿Ya tienes cuenta?
+              <a href="login.html" style="color: var(--brand); font-weight: 700"
+                >Login</a
+              >
+            </p>
+
+            <a
+              class="btn btn-ghost"
+              href="index.html"
+              style="justify-content: center"
+            >
+              <i class="fa-solid fa-house"></i> Volver a inicio
+            </a>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/ui/toast.js"></script>
+    <script src="js/register.js"></script>
+  </body>
+</html>

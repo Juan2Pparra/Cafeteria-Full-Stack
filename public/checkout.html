@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Confirmar pedido | Cafetería</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="toasts" id="toasts"></div>
+
+    <div class="fixed-header" style="margin-top: 0">
+      <a href="cart.html" class="logo">
+        <div class="mark"><i class="fa-solid fa-receipt"></i></div>
+        <div class="name">
+          <b>Confirmar pedido</b><small>Datos de entrega</small>
+        </div>
+      </a>
+      <div class="header-actions">
+        <a class="pill" href="cart.html"
+          ><i class="fa-solid fa-arrow-left"></i> Volver</a
+        >
+        <a class="pill" href="index.html"
+          ><i class="fa-solid fa-store"></i> Tienda</a
+        >
+      </div>
+    </div>
+
+    <div class="page">
+      <div class="contenedor">
+        <div class="row">
+          <div class="panel" style="flex: 1.2">
+            <h2 style="font-size: 1.4rem">Tus datos (obligatorios)</h2>
+            <p class="helper" style="margin-top: 6px">
+              Se guardan en el pedido para que el admin sepa a quién y dónde
+              entregar.
+            </p>
+
+            <div style="height: 14px"></div>
+
+            <div class="form">
+              <div class="input">
+                <i class="fa-solid fa-user"></i>
+                <input
+                  id="custNombre"
+                  type="text"
+                  placeholder="Nombre completo *"
+                />
+              </div>
+
+              <div class="input">
+                <i class="fa-solid fa-phone"></i>
+                <input id="custTelefono" type="text" placeholder="Teléfono *" />
+              </div>
+
+              <div class="input">
+                <i class="fa-solid fa-location-dot"></i>
+                <input
+                  id="custDireccion"
+                  type="text"
+                  placeholder="Dirección *"
+                />
+              </div>
+
+              <div class="input">
+                <i class="fa-solid fa-house"></i>
+                <input
+                  id="custReferencia"
+                  type="text"
+                  placeholder="Referencia (opcional) ej: apto 302, casa azul..."
+                />
+              </div>
+
+              <button
+                id="btnConfirmar"
+                class="btn btn-primary"
+                style="justify-content: center"
+              >
+                <i class="fa-solid fa-check"></i> Confirmar pedido
+              </button>
+
+              <p class="helper">
+                Al confirmar se crea tu pedido y verás una mini-factura en “Mis
+                pedidos”.
+              </p>
+            </div>
+          </div>
+
+          <div class="panel" style="flex: 0.8">
+            <h2 style="font-size: 1.4rem">Resumen</h2>
+            <p class="helper" style="margin-top: 6px">Lo que vas a comprar.</p>
+
+            <div style="height: 14px"></div>
+
+            <div id="checkout-resumen"></div>
+
+            <div style="height: 12px"></div>
+
+            <div
+              class="panel"
+              style="background: rgba(255, 255, 255, 0.03); border-radius: 18px"
+            >
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                "
+              >
+                <span class="helper">Total</span>
+                <b id="checkout-total">$0</b>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/ui/toast.js"></script>
+    <script src="js/checkout.js"></script>
+  </body>
+</html>

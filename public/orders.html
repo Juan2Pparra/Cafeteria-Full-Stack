@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mis pedidos | Cafetería</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="toasts" id="toasts"></div>
+
+    <div class="fixed-header" style="margin-top: 0">
+      <a href="index.html" class="logo">
+        <div class="mark"><i class="fa-solid fa-receipt"></i></div>
+        <div class="name"><b>Mis pedidos</b><small>Mini-facturas</small></div>
+      </a>
+      <div class="header-actions">
+        <a class="pill" href="index.html"
+          ><i class="fa-solid fa-store"></i> Tienda</a
+        >
+        <a class="pill" href="cart.html"
+          ><i class="fa-solid fa-cart-shopping"></i> Carrito</a
+        >
+        <button class="pill" onclick="logout()">
+          <i class="fa-solid fa-right-from-bracket"></i> Salir
+        </button>
+      </div>
+    </div>
+
+    <div class="page">
+      <div class="contenedor">
+        <div class="panel">
+          <h2 style="font-size: 1.4rem">Historial</h2>
+          <p class="helper" style="margin-top: 6px">
+            Aquí verás tus pedidos con datos y total.
+          </p>
+
+          <div style="height: 14px"></div>
+
+          <div id="orders-container"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/ui/toast.js"></script>
+    <script src="js/orders.js"></script>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Admin | Pedidos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="toasts" id="toasts"></div>
+
+    <div class="fixed-header" style="margin-top: 0">
+      <a href="index.html" class="logo">
+        <div class="mark"><i class="fa-solid fa-box"></i></div>
+        <div class="name">
+          <b>Admin Pedidos</b><small>Ver · Cambiar estado</small>
+        </div>
+      </a>
+      <div class="header-actions">
+        <a class="pill" href="admin-products.html"
+          ><i class="fa-solid fa-screwdriver-wrench"></i> Productos</a
+        >
+        <a class="pill" href="index.html"
+          ><i class="fa-solid fa-store"></i> Tienda</a
+        >
+        <button class="pill" onclick="logout()">
+          <i class="fa-solid fa-right-from-bracket"></i> Salir
+        </button>
+      </div>
+    </div>
+
+    <div class="page">
+      <div class="contenedor">
+        <div class="panel">
+          <h2 style="font-size: 1.4rem">Pedidos</h2>
+          <p class="helper" style="margin-top: 6px">
+            Aquí ves quién pidió, dónde y el total.
+          </p>
+
+          <div style="height: 14px"></div>
+
+          <div id="adminOrders"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/ui/toast.js"></script>
+    <script src="js/admin-orders.js"></script>
+  </body>
+</html>

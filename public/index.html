@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cafetería | Pedidos Online</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Fonts + Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- TOASTS -->
+    <div class="toasts" id="toasts"></div>
+
+    <!-- HEADER (Mobile) -->
+    <header>
+      <div class="menu-mobile">
+        <div class="barra">
+          <a href="#" class="logo volver-arriba">
+            <div class="mark"><i class="fa-solid fa-mug-hot"></i></div>
+          </a>
+          <a href="#" id="btnMenu" class="pill"
+            ><i class="fa-solid fa-bars"></i
+          ></a>
+        </div>
+
+        <nav class="menu-principal">
+          <a href="#" class="volver-arriba">Inicio</a>
+          <a href="#menu" class="scroll-suave">Menú</a>
+          <a href="#beneficios" class="scroll-suave">Beneficios</a>
+          <a href="#contacto" class="scroll-suave">Contacto</a>
+
+          <div style="height: 10px"></div>
+
+          <a href="cart.html"
+            ><i class="fa-solid fa-cart-shopping"></i> Carrito</a
+          >
+          <a href="orders.html"
+            ><i class="fa-solid fa-receipt"></i> Mis pedidos</a
+          >
+
+          <a
+            id="m-admin-products"
+            href="admin-products.html"
+            style="display: none"
+          >
+            <i class="fa-solid fa-screwdriver-wrench"></i> Admin Productos
+          </a>
+          <a id="m-admin-orders" href="admin-orders.html" style="display: none">
+            <i class="fa-solid fa-box"></i> Admin Pedidos
+          </a>
+
+          <a id="m-login" href="login.html"
+            ><i class="fa-solid fa-right-to-bracket"></i> Login</a
+          >
+          <a id="m-register" href="register.html"
+            ><i class="fa-solid fa-user-plus"></i> Registro</a
+          >
+          <a id="m-logout" href="#" style="display: none"
+            ><i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión</a
+          >
+        </nav>
+      </div>
+
+      <!-- HEADER (Desktop) -->
+      <div class="menu-bar-pc">
+        <a href="#" class="logo volver-arriba">
+          <div class="mark"><i class="fa-solid fa-mug-hot"></i></div>
+          <div class="name">
+            <b>Cafetería</b>
+            <small>Pedidos Online</small>
+          </div>
+        </a>
+
+        <nav class="menu-principal">
+          <a href="#" class="volver-arriba">Inicio</a>
+          <a href="#menu" class="scroll-suave">Menú</a>
+          <a href="#beneficios" class="scroll-suave">Beneficios</a>
+          <a href="#contacto" class="scroll-suave">Contacto</a>
+        </nav>
+
+        <div class="header-actions" id="auth-buttons">
+          <a class="pill" href="login.html"
+            ><i class="fa-solid fa-right-to-bracket"></i> Login</a
+          >
+          <a class="pill" href="register.html"
+            ><i class="fa-solid fa-user-plus"></i> Registro</a
+          >
+        </div>
+
+        <div class="header-actions" id="user-buttons" style="display: none">
+          <a
+            class="pill"
+            id="admin-products-link"
+            href="admin-products.html"
+            style="display: none"
+          >
+            <i class="fa-solid fa-screwdriver-wrench"></i> Productos
+          </a>
+          <a
+            class="pill"
+            id="admin-orders-link"
+            href="admin-orders.html"
+            style="display: none"
+          >
+            <i class="fa-solid fa-box"></i> Pedidos
+          </a>
+          <a class="pill" href="orders.html"
+            ><i class="fa-solid fa-receipt"></i> Mis pedidos</a
+          >
+          <a class="pill" href="cart.html"
+            ><i class="fa-solid fa-cart-shopping"></i> Carrito</a
+          >
+          <button class="pill" onclick="logout()">
+            <i class="fa-solid fa-right-from-bracket"></i> Salir
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Sticky header -->
+    <div class="fixed-header" id="fixedHeader">
+      <a href="#" class="logo volver-arriba">
+        <div class="mark"><i class="fa-solid fa-mug-hot"></i></div>
+        <div class="name"><b>Cafetería</b><small>Pedidos Online</small></div>
+      </a>
+
+      <nav class="menu-principal">
+        <a href="#" class="volver-arriba">Inicio</a>
+        <a href="#menu" class="scroll-suave">Menú</a>
+        <a href="#beneficios" class="scroll-suave">Beneficios</a>
+        <a href="#contacto" class="scroll-suave">Contacto</a>
+      </nav>
+
+      <div class="header-actions" id="fixed-actions">
+        <a class="pill" href="cart.html"
+          ><i class="fa-solid fa-cart-shopping"></i
+        ></a>
+        <a class="pill" href="orders.html"
+          ><i class="fa-solid fa-receipt"></i
+        ></a>
+      </div>
+    </div>
+
+    <!-- MAIN -->
+    <section class="main">
+      <!-- HERO -->
+      <section class="hero" id="hero">
+        <div class="contenedor">
+          <div class="hero-content">
+            <div class="hero-kicker">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+              <span>Hecho rápido, servido caliente ☕</span>
+            </div>
+
+            <h1>Tu café favorito, <br />a un clic de distancia.</h1>
+
+            <p>
+              Elige tu bebida, ajusta cantidad y azúcar, agrégala al carrito y
+              realiza tu pedido. Si eres admin puedes gestionar productos y
+              pedidos desde el panel.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary scroll-suave" href="#menu">
+                <i class="fa-solid fa-mug-saucer"></i> Ver menú
+              </a>
+              <a class="btn btn-ghost" href="cart.html">
+                <i class="fa-solid fa-cart-shopping"></i> Ir al carrito
+              </a>
+            </div>
+
+            <div class="hero-stats">
+              <div class="stat"><b>+50</b><span>Combinaciones</span></div>
+              <div class="stat"><b>1 min</b><span>Pedido rápido</span></div>
+              <div class="stat"><b>Admin</b><span>Gestión completa</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MENU / PRODUCTS -->
+      <section class="section" id="menu">
+        <div class="contenedor">
+          <div class="titulo-seccion">
+            <h2>Menú</h2>
+            <p>Busca tu producto y agrégalo con o sin azúcar.</p>
+          </div>
+
+          <div class="toolbar">
+            <div class="search">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input
+                id="searchInput"
+                type="text"
+                placeholder="Buscar: latte, capuccino, tinto..."
+              />
+            </div>
+
+            <div class="chips">
+              <button class="chip active" data-filter="all">Todos</button>
+              <button class="chip" data-filter="price-asc">Precio ↑</button>
+              <button class="chip" data-filter="price-desc">Precio ↓</button>
+              <button class="chip" data-filter="newest">Nuevos</button>
+            </div>
+          </div>
+
+          <div id="productos-container" class="grid"></div>
+        </div>
+      </section>
+
+      <!-- PARALLAX STRIP -->
+      <section class="parallax-strip" id="beneficios">
+        <div class="contenedor">
+          <div class="left">
+            <h3>Personaliza tu pedido</h3>
+            <p>
+              Ajusta cantidad, elige con o sin azúcar, revisa tu carrito y
+              realiza el pedido. El estado se actualiza desde el panel admin
+              (pendiente → preparando → listo).
+            </p>
+          </div>
+
+          <div class="right">
+            <a class="btn btn-primary" href="orders.html">
+              <i class="fa-solid fa-receipt"></i> Ver mis pedidos
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACTO (parallax by scroll) -->
+      <section class="section" id="contacto">
+        <div class="contenedor">
+          <div class="titulo-seccion">
+            <h2>Contacto</h2>
+            <p>Déjanos tus comentarios o preguntas.</p>
+          </div>
+
+          <div class="row">
+            <div class="panel">
+              <div class="form" id="formulario">
+                <div class="input">
+                  <i class="fa-solid fa-user"></i>
+                  <input id="nombre" type="text" placeholder="Nombre" />
+                </div>
+                <div class="input">
+                  <i class="fa-solid fa-envelope"></i>
+                  <input id="email" type="email" placeholder="Correo" />
+                </div>
+                <div class="input">
+                  <i class="fa-solid fa-message"></i>
+                  <textarea id="mensaje" placeholder="Tu mensaje"></textarea>
+                </div>
+                <button class="btn btn-primary" id="btnEnviar">
+                  <i class="fa-solid fa-paper-plane"></i> Enviar
+                </button>
+                <span class="helper">la mejor cafeteria del pais</span>
+              </div>
+            </div>
+
+            <div class="panel" style="position: relative; overflow: hidden">
+              <div
+                style="
+                  position: absolute;
+                  inset: 0;
+                  opacity: 0.15;
+                  background-image: url(&quot;/img/cafe-contact.jpg&quot;);
+                  background-size: cover;
+                  background-position: center;
+                "
+              ></div>
+              <div style="position: relative">
+                <h3 style="font-size: 1.35rem">Horario</h3>
+                <p class="helper" style="margin-top: 10px; line-height: 1.8">
+                  Lun a Vie: 8:00 - 20:00 <br />
+                  Sáb: 9:00 - 18:00 <br />
+                  Dom: 10:00 - 16:00
+                </p>
+
+                <div style="height: 12px"></div>
+
+                <h3 style="font-size: 1.35rem">Dirección</h3>
+                <p class="helper" style="margin-top: 10px; line-height: 1.8">
+                  Centro, Calle 123 <br />
+                  Pedidos online disponibles
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <footer>
+      <div class="contenedor">
+        <p>© Cafetería — Todos los derechos reservados</p>
+        <div class="social">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- UI inspired scripts -->
+    <script src="js/ui/toast.js"></script>
+    <script src="js/ui/menuMobile.js"></script>
+    <script src="js/ui/stickyHeader.js"></script>
+    <script src="js/ui/scrollSuave.js"></script>
+    <script src="js/ui/parallax.js"></script>
+    <script src="js/ui/modalProduct.js"></script>
+
+    <!-- App logic -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
